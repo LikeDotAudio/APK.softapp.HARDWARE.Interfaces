@@ -14,4 +14,5 @@ Every interface the discovery engine has found, and the state it is in now — p
 | **Build** | none — plain ES modules; `npm test` (node's own runner) |
 
 <!-- wiki:smoke -->
+**Smoke test** — ❌ FAIL 1/3 since 2026-11-04 22:10 EST — [results](Documentation/%F0%9F%A7%A9Manual%20and%20Artifacts/SMOKE.md)
 <!-- /wiki:smoke -->
