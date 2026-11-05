@@ -1,0 +1,5 @@
+{
+  "_about": "Interfaces' tunables. engine_url: where the discovery engine answers ({host} = this page's host, {proto} = http or https); ?engine=<url> on the page overrides it. refresh_ms: how often it re-reads /api/status. Tunables only: no device or plugin list.",
+  "engine_url": "{proto}://{host}:8120",
+  "refresh_ms": 5000
+}

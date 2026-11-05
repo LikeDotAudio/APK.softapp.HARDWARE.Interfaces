@@ -1,0 +1,50 @@
+<!doctype html>
+<!-- Part of the APK.audio project — http://APK.audio — made by Anthony Kuzub
+     MIT Licence. Free, for everyone, for ever. Full text in LICENSE at the root. -->
+<!-- INTERFACES — every interface the discovery engine has found, and the state it
+     is in now. A softapp on the SDK: APKSoftapp (fetchJson, showProblem, describe,
+     inheritTheme), APKTable for every table, APKContracts for the presence rule and
+     the tokens. A THIN app over the THICK engine (POD.THICK/DISCOVERY.Engine):
+     nothing here is hand-built and nothing is a snapshot. js/app.js. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interfaces</title>
+<link rel="stylesheet" href="./vendor/apk-contracts/apk-tokens.css">
+<link rel="stylesheet" href="./vendor/apk-table/apk-table.css">
+<link rel="stylesheet" href="./css/interfaces.css">
+</head>
+<body>
+<header class="head">
+  <h1>🔌 INTERFACES</h1>
+  <small id="source"></small>
+</header>
+
+<section class="engine" aria-label="Discovery engine">
+  <span class="title">DISCOVERY ENGINE · <span class="pill" id="engine-state" data-apk-state="kinda">—</span></span>
+  <span class="dim" id="engine-line">asking the discovery engine…</span>
+</section>
+<div id="problem"></div>
+
+<div class="layout">
+  <nav id="tabs" aria-label="Interfaces"></nav>
+  <main>
+    <div class="bar"><h2 id="title"></h2><span class="dim" id="count"></span></div>
+    <p class="what" id="what"></p>
+    <div class="wrap"><div id="main-table"></div></div>
+    <section class="grave wrap" id="grave" hidden>
+      <h3>💀 GRAVEYARD (<span id="grave-count">0</span>) <small class="dim">what went silent in this category past its TTL</small></h3>
+      <div id="grave-table"></div>
+    </section>
+  </main>
+</div>
+
+<!-- THE SDK — classic scripts, before the module (apk-softapp.js says the order). -->
+<script src="./vendor/apk-contracts/apk-contracts.global.js"></script>
+<script src="/FrontEnd/shared/apk-bus.js"></script>
+<script src="./vendor/apk-softapp/apk-softapp.js"></script>
+<script src="./vendor/apk-table/apk-table.js"></script>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

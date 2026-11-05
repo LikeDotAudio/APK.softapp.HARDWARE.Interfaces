@@ -1,0 +1,44 @@
+/* Part of the APK.audio project — http://APK.audio — made by Anthony Kuzub
+   MIT Licence. Free, for everyone, for ever. Full text in LICENSE at the root.
+   Interfaces wears the SDK's tokens (vendor/apk-contracts/apk-tokens.css; the
+   shell's own when framed, APKSoftapp.inheritTheme): accent, and the three
+   states good / kinda / dead. No colour of its own beyond the page ground. */
+:root { --ground: #0b0b0d; --panel: #141418; --panel-alt: #1b1b21; --edge: #2a2a33; --ink: #e8e8ea; --ink-dim: #8d8f99; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 12px/1.4 ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace; }
+.head { padding: 10px 14px; border-bottom: 1px solid var(--edge); display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.head h1 { font-size: 14px; margin: 0; color: var(--apk-accent); letter-spacing: .04em; }
+.head small, .dim { color: var(--ink-dim); }
+.engine { display: flex; gap: 10px 18px; align-items: center; flex-wrap: wrap; padding: 10px 14px; background: var(--panel); border-bottom: 1px solid var(--edge); }
+.engine .title { font-weight: 700; letter-spacing: .05em; }
+.pill { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 11px; border: 1px solid currentColor; white-space: nowrap; }
+[data-apk-state=good] { color: var(--apk-state-good); }
+[data-apk-state=kinda] { color: var(--apk-state-kinda); }
+[data-apk-state=dead] { color: var(--apk-state-dead); }
+.layout { display: grid; grid-template-columns: 230px 1fr; min-height: calc(100vh - 90px); }
+nav { border-right: 1px solid var(--edge); background: var(--panel); padding: 6px 0; display: flex; flex-direction: column; }
+.tab { display: flex; align-items: center; gap: 8px; padding: 7px 12px; cursor: pointer; color: var(--ink-dim); background: none; border: 0;
+  border-left: 2px solid transparent; white-space: nowrap; font: inherit; text-align: left; }
+.tab:hover { color: var(--ink); background: var(--panel-alt); }
+.tab.on { color: var(--apk-accent); border-left-color: var(--apk-accent); background: var(--panel-alt); }
+.tab .n { margin-left: auto; font-variant-numeric: tabular-nums; }
+.tab .n.none { color: var(--ink-dim); }
+main { min-width: 0; }
+.bar { display: flex; gap: 10px; align-items: center; padding: 8px 14px; }
+.bar h2 { margin: 0; font-size: 13px; letter-spacing: .04em; }
+.what { padding: 0 14px; margin: 0 0 8px; color: var(--ink-dim); }
+.wrap { overflow-x: auto; padding: 0 14px 20px; }
+.grave { border-top: 1px solid var(--edge); margin-top: 18px; padding-top: 14px; }
+.grave h3 { font-size: 12px; margin: 0 0 8px; color: var(--apk-state-dead); }
+.empty { padding: 20px 14px; color: var(--ink-dim); text-align: center; }
+button.kick { background: var(--panel-alt); color: var(--apk-accent); border: 1px solid var(--edge); border-radius: 4px; font: inherit; padding: 3px 10px; cursor: pointer; }
+button.kick:hover { border-color: var(--apk-accent); }
+button.kick:disabled { opacity: .5; cursor: wait; }
+#problem:empty { display: none; }
+#problem { padding: 10px 14px; }
+@media (max-width: 720px) {
+  .layout { grid-template-columns: 1fr; }
+  nav { flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--edge); }
+  .tab { border-left: 0; border-bottom: 2px solid transparent; }
+  .tab.on { border-bottom-color: var(--apk-accent); }
+}
